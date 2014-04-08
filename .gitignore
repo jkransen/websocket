@@ -8,6 +8,9 @@ dist
 /.idea
 /*.iml
 /out
+/bin
+/.cache
+/.target
 /.idea_modules
 /.classpath
 /.project

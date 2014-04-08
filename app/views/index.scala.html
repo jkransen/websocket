@@ -1,7 +1,15 @@
-@(message: String)
+@(message: String)(implicit request: RequestHeader)
 
-@main("Welcome to Play") {
+@main("Index") {
 
-    @play20.welcome(message)
+<script type="text/javascript">
+  $(function() {
+    var ws = new WebSocket("@routes.WebSockets.statusFeed.webSocketURL()")
+    ws.onmessage = function(msg) {
+      $('#load-average').text(msg.data)
+    }
+  })
+</script>
+<h1>System load average: <span id="load-average"></span></h1>
 
 }
