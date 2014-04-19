@@ -19,9 +19,6 @@ object WebSockets extends Controller {
     (in, out)
   }
   
-  def aap = {
-  }
-  
   def getLoadAverage: String = {
     Random.nextInt(100) + "%"
   }
